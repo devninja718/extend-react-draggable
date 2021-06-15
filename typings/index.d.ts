@@ -1,4 +1,4 @@
-declare module 'react-draggable' {
+declare module 'extend-react-draggable' {
   import * as React from 'react';
 
   export interface DraggableBounds {
@@ -33,7 +33,8 @@ declare module 'react-draggable' {
     node: HTMLElement,
     x: number, y: number,
     deltaX: number, deltaY: number,
-    lastX: number, lastY: number
+    lastX: number, lastY: number,
+    degree: number
   }
 
   export type ControlPosition = {x: number, y: number};
@@ -53,7 +54,8 @@ declare module 'react-draggable' {
     onDrag: DraggableEventHandler,
     onStop: DraggableEventHandler,
     onMouseDown: (e: MouseEvent) => void,
-    scale: number
+    scale: number,
+    degree: number
   }
 
   export default class Draggable extends React.Component<Partial<DraggableProps>, {}> {
